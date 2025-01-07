@@ -2,15 +2,14 @@ import './App.css'
 import MyComponent from "../components/MyComponent.tsx";
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
 
-        <MyComponent text={'hello1'}/>
-        <MyComponent text={'hello2'}/>
-        <MyComponent text={'hello3'}/>
-        <MyComponent text={'hello4'}/>
+        <MyComponent title={'title 1'}> Lorem  ipsum dolor sit  </MyComponent>
+        <MyComponent title={'title 2'}></MyComponent>
+        <MyComponent title={'hello3'}/>
+        <MyComponent title={'hello4'}/>
 
         {/*{MyComponent({text: 'Hello 2'})}*/}
     </>
