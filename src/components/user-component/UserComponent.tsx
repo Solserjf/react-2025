@@ -1,13 +1,15 @@
 import {IUser} from "../../models/IUser.ts";
 import {FC} from "react";
 type UserPropType = {
-    item: IUser;
+    item: IUser,
+    foo: (item: IUser) => void
 }
-const UserComponent: FC<UserPropType> = ({item}) => {
+const UserComponent: FC<UserPropType> = ({item, foo}) => {
     return (
-        <div>
+        <>
             <div>{item.name}</div>
-        </div>
+            <button onClick={() => {foo(item);}}>details</button>
+        </>
     );
 };
 
