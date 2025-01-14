@@ -3,11 +3,11 @@ export interface IPost {
 	title: string;
 	body: string;
 	tags: string[];
-	reactions: RootObjectReactions;
+	reactions: Reactions;
 	views: number;
 	userId: number;
 }
-export interface RootObjectReactions {
+export interface Reactions {
 	likes: number;
 	dislikes: number;
 }

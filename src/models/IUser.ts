@@ -15,63 +15,63 @@ export interface IUser {
 	height: number;
 	weight: number;
 	eyeColor: string;
-	hair: IHair;
+	hair: Hair;
 	ip: string;
-	address: IAddress;
+	address: Address;
 	macAddress: string;
 	university: string;
-	bank: IBank;
-	company: ICompany;
+	bank: Bank;
+	company: Company;
 	ein: string;
 	ssn: string;
 	userAgent: string;
-	crypto: ICrypto;
+	crypto: Crypto;
 	role: string;
 }
-export interface IHair {
+export interface Hair {
 	color: string;
 	type: string;
 }
-export interface RootObjectAddressCoordinates {
+export interface AddressCoordinates {
 	lat: number;
 	lng: number;
 }
-export interface IAddress {
+export interface Address {
 	address: string;
 	city: string;
 	state: string;
 	stateCode: string;
 	postalCode: string;
-	coordinates: RootObjectAddressCoordinates;
+	coordinates: AddressCoordinates;
 	country: string;
 }
-export interface IBank {
+export interface Bank {
 	cardExpire: string;
 	cardNumber: string;
 	cardType: string;
 	currency: string;
 	iban: string;
 }
-export interface RootObjectCompanyAddressCoordinates {
+export interface CompanyAddressCoordinates {
 	lat: number;
 	lng: number;
 }
-export interface RootObjectCompanyAddress {
+export interface CompanyAddress {
 	address: string;
 	city: string;
 	state: string;
 	stateCode: string;
 	postalCode: string;
-	coordinates: RootObjectCompanyAddressCoordinates;
+	coordinates: CompanyAddressCoordinates;
 	country: string;
 }
-export interface ICompany {
+export interface Company {
 	department: string;
 	name: string;
 	title: string;
-	address: RootObjectCompanyAddress;
+	address: CompanyAddress;
 }
-export interface ICrypto {
+export interface Crypto {
 	coin: string;
 	wallet: string;
 	network: string;
