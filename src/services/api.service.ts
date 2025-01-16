@@ -9,6 +9,6 @@ export const userService = {
 };
 export const  cartService = {
         getCartsOfUser: async (userId:string):Promise<ICardResponseModel> => {
-            return await fetch('https://dummyjson.com/carts/user/' + userId).then(res => res.json());
+            return await fetch(baseUrl +'/carts/user/' + userId).then(res => res.json());
         }
 };

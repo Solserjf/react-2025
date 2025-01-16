@@ -9,7 +9,6 @@ export const CartsComponent = () => {
     console.log(id);
     const [carts, setCarts] = useState<ICard[]>([]);
     useEffect(() => {
-        console.log('asd');
         if(id){
    cartService.getCartsOfUser(id)
         .then(({carts}:ICardResponseModel)=> {
@@ -20,7 +19,7 @@ export const CartsComponent = () => {
     return (
         <div>
             {
-                carts.map((cart:ICard)=>(<div>{cart.total}</div>))
+                carts.map((cart:ICard)=>(<div key={cart.id}>{cart.total}</div>))
             }
         </div>
     );
