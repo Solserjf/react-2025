@@ -1,12 +1,11 @@
 import './App.css'
 import {PaginationComponent} from "./components/pagination/PaginationComponent.tsx";
-import {SomeComponent} from "./components/some/SomeComponent.tsx";
+import {UsersComponent} from "./components/users/UsersComponent.tsx";
 
 const App = () => {
   return (
     <div>
-        <SomeComponent/>
-        hello
+        <UsersComponent/>
         <PaginationComponent/>
     </div>
   )
