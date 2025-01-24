@@ -1,10 +1,16 @@
 import {UserComponent} from "./UserComponent.tsx";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 
 export const UsersComponent = () => {
     console.log('Users');
     const [users, setUsers] = useState([]);
-    const foo = useCallback(() => {//ця ф-ція перестворюється щоразу як відбувається рірендер
+
+    const arr: number[] = useMemo(() => {
+        return [11,22,33];// цей масив буде закешований/мемоізований
+    }, []);
+
+
+    const foo = useCallback(() => {// ф-ція перестворюється щоразу як відбувається рірендер
         console.log('test');// якщо будуть аргументи у ф-ції то їх потрібно буде визначити у залежностях(пустий масив над useEffect)
     }, []) // таким чином ф-ція відпрацює тільки раз бо ми  її закешували
     useEffect(() => {
@@ -19,7 +25,9 @@ export const UsersComponent = () => {
     return (
         <div>
             users component
-            <UserComponent foo={foo}/> // тобто ми кешуємо тепер не тільки компонент а і його props як в даному випадку з ф-цію foo яка тут виступає як props
+            <UserComponent foo={foo} arr={arr}/>
         </div>
+        // тобто ми кешуємо тепер не тільки компонент а і його props як в даному випадку з ф-цію foo яка тут виступає як props
+        // комірка arr перезаписується і UserComponent бачить це нове посилання і відбувається рірендер
     );
 };
