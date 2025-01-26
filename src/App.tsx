@@ -9,10 +9,9 @@ function App() {
   return (
     <div>
         <MyContext.Provider value={{
-            counterValue:counter,
+            counterValue:counter,//витягаємо поточне значення з цієї точки
             increment:(obj) =>{
-
-                setCounter(obj++);
+                setCounter(++obj);
                 console.log(obj);
         }}}>
             <LeftBranch/>

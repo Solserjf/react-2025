@@ -6,7 +6,7 @@ type MyContextType = {
 
 export const init = {
     counterValue: 0,
-    increment: (obj: number) => {
+    increment: (obj: number) => {//у increment передається поточне значення counterValue
         console.log(obj);
     }
 }
