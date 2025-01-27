@@ -1,10 +1,11 @@
 import './App.css'
 import {useFetch} from "./hooks/useFetch.tsx";
 import {IUser} from "./models/IUser.ts";
+import {baseUrl} from "./services/service.api.ts";
 
 
 export function App() {
-    const users = useFetch<IUser[]>("https://jsonplaceholder.typicode.com/users");
+    const users = useFetch<IUser[]>(baseUrl + "/users");
 
     return (
         <>
@@ -20,7 +21,6 @@ export function App() {
     );
 }
 
-// чому якщо я заміняю "https://jsonplaceholder.typicode.com/users" на BaseUrl + '/users' - у мене не виводяться юзери на єкран
-// тобто const users = useFetch<IUser[]>(baseUrl + '/users');
+
 
 
